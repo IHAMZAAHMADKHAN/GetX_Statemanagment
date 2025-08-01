@@ -19,13 +19,15 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  DialogRoute(
-                    context: context,
-                    builder: (context) => ThemeChange(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   DialogRoute(
+                //     context: context,
+                //     builder: (context) => ThemeChange(),
+                //   ),
+                // );
+
+                Get.to(ThemeChange());
               },
               icon: Icon(Icons.navigation_rounded),
             ),
