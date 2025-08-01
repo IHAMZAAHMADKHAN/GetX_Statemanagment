@@ -29,6 +29,21 @@ class _ThemeChangeState extends State<ThemeChange> {
                 Get.changeTheme(ThemeData.dark());
               },
             ),
+            SizedBox(height: 20),
+            IconButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   DialogRoute(
+                //     context: context,
+                //     builder: (context) => ThemeChange(),
+                //   ),
+                // );
+
+                Get.back();
+              },
+              icon: Icon(Icons.navigation_rounded),
+            ),
           ],
         ),
       ),
