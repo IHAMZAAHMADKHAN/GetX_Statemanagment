@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:getx_statemanagement/view/home_screen.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/view/class_lang.dart';
+import 'package:getx_statemanagement/view/home_screen.dart';
+// adjust path if needed
 
 void main() {
   runApp(const MyApp());
@@ -8,15 +10,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Getx statmangment',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      translations: Tranlastion(),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
       home: const HomeScreen(),
     );
   }

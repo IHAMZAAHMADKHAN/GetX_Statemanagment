@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_statemanagement/view/theme_change.dart';
+import 'package:getx_statemanagement/view/tranlastion_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,23 +14,29 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home Screen")),
+      appBar: AppBar(
+        title: Text('home_title'.tr), // translated title
+      ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   DialogRoute(
-                //     context: context,
-                //     builder: (context) => ThemeChange(),
-                //   ),
-                // );
-
-                Get.to(ThemeChange());
+                Get.to(() => const ThemeChange());
               },
-              icon: Icon(Icons.navigation_rounded),
+              icon: const Icon(Icons.navigation_rounded),
+              tooltip: 'theme'.tr,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const TranlastionScreen());
+              },
+              child: Text('go_to_translation'.tr),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
+              ),
             ),
           ],
         ),
@@ -37,13 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Get.snackbar(
-            "Snap time",
-            "let's try to take snap",
+            'snap_time'.tr,
+            'snap_message'.tr,
             snackPosition: SnackPosition.BOTTOM,
           );
         },
-        child: Icon(Icons.snapchat),
+        child: const Icon(Icons.snapchat),
         backgroundColor: Colors.amber,
+        tooltip: 'snackbar'.tr,
       ),
     );
   }

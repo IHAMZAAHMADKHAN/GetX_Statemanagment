@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/view/widthandhieght.dart';
 
 class ThemeChange extends StatefulWidget {
   const ThemeChange({super.key});
@@ -40,7 +41,7 @@ class _ThemeChangeState extends State<ThemeChange> {
                 //   ),
                 // );
 
-                Get.back();
+                Get.to(Widthandhieght());
               },
               icon: Icon(Icons.navigation_rounded),
             ),
