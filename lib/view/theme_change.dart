@@ -13,37 +13,31 @@ class _ThemeChangeState extends State<ThemeChange> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('theme'.tr)),
       body: SafeArea(
         child: Column(
           children: [
             ListTile(
-              leading: const Icon(Icons.light),
-              title: const Text("Light Theme"),
+              leading: const Icon(Icons.light_mode),
+              title: Text('light_theme'.tr),
               onTap: () {
                 Get.changeTheme(ThemeData.light());
               },
             ),
             ListTile(
               leading: const Icon(Icons.dark_mode),
-              title: const Text("Dart Theme"),
+              title: Text('dark_theme'.tr),
               onTap: () {
                 Get.changeTheme(ThemeData.dark());
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             IconButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   DialogRoute(
-                //     context: context,
-                //     builder: (context) => ThemeChange(),
-                //   ),
-                // );
-
-                Get.to(Widthandhieght());
+                Get.to(() => const Widthandhieght());
               },
-              icon: Icon(Icons.navigation_rounded),
+              icon: const Icon(Icons.navigation_rounded),
+              tooltip: 'navigate'.tr,
             ),
           ],
         ),

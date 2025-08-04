@@ -11,11 +11,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  void _setLocale(Locale locale) {
+    Get.updateLocale(locale);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('home_title'.tr), // translated title
+        title: Text('home_title'.tr),
+        actions: [
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.language),
+            onSelected: (value) {
+              if (value == 'en') {
+                _setLocale(const Locale('en', 'US'));
+              } else if (value == 'ps') {
+                _setLocale(const Locale('ps', 'AF'));
+              }
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(value: 'en', child: Text('English')),
+              PopupMenuItem(value: 'ps', child: Text('پښتو')),
+            ],
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -35,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Text('go_to_translation'.tr),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
+                // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
               ),
             ),
           ],
