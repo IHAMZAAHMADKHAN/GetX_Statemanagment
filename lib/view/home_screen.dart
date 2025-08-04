@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/view/counter_screen.dart';
 import 'package:getx_statemanagement/view/theme_change.dart';
 import 'package:getx_statemanagement/view/tranlastion_screen.dart';
 
@@ -54,6 +55,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 Get.to(() => const TranlastionScreen());
               },
               child: Text('go_to_translation'.tr),
+              style: ButtonStyle(
+                // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const CounterScreen());
+              },
+              child: Text('go_to_counter Screen'.tr),
               style: ButtonStyle(
                 // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
               ),
