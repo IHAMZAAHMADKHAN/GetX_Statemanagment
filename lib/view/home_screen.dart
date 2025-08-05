@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/view/add_favorites.dart';
 import 'package:getx_statemanagement/view/counter_screen.dart';
+import 'package:getx_statemanagement/view/slider_exp.dart';
 import 'package:getx_statemanagement/view/theme_change.dart';
 import 'package:getx_statemanagement/view/tranlastion_screen.dart';
 
@@ -66,6 +68,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 Get.to(() => const CounterScreen());
               },
               child: Text('go_to_counter Screen'.tr),
+              style: ButtonStyle(
+                // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
+              ),
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const SliderExp());
+              },
+              child: Text('go_to_ Slider screen'.tr),
+              style: ButtonStyle(
+                // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
+              ),
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const AddFavorites());
+              },
+              child: Text('go to favorite screen'.tr),
               style: ButtonStyle(
                 // backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
               ),
