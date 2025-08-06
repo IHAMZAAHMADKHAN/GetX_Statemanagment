@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_statemanagement/view/add_favorites.dart';
+import 'package:getx_statemanagement/view/add_profiel.dart';
 import 'package:getx_statemanagement/view/counter_screen.dart';
 import 'package:getx_statemanagement/view/slider_exp.dart';
 import 'package:getx_statemanagement/view/theme_change.dart';
@@ -44,9 +45,16 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.to(() => const TranlastionScreen());
+              },
+              child: Text('go_to_profile'.tr),
+              style: ButtonStyle(),
+            ),
             IconButton(
               onPressed: () {
-                Get.to(() => const ThemeChange());
+                Get.to(() => const AddProfiel());
               },
               icon: const Icon(Icons.navigation_rounded),
               tooltip: 'theme'.tr,
